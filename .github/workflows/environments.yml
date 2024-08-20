@@ -15,6 +15,9 @@ jobs:
       VERSION: ${{ github.event.client_payload.version }}
       
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Run integration
         id: integration
         run: echo "RESULT=PASSED" >> $GITHUB_OUTPUT
