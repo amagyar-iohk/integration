@@ -1,1 +1,1 @@
-{"reportName":"cloud-agent","testRuns":[],"statistic":{"failed":0,"broken":0,"skipped":0,"passed":5,"unknown":0,"total":5},"time":{"start":1724330036802,"stop":1724330041208,"duration":4406,"minDuration":2,"maxDuration":4005,"sumDuration":4403}}
+{"reportName":"cloud-agent","testRuns":[],"statistic":{"failed":0,"broken":0,"skipped":0,"passed":4,"unknown":0,"total":4},"time":{"start":1724332713842,"stop":1724332718234,"duration":4392,"minDuration":77,"maxDuration":4005,"sumDuration":4391}}
