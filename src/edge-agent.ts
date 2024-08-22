@@ -13,8 +13,15 @@ export function edgeAgentGetVersion(variables: Variables): string {
     return version.toString()
 }
 
-export async function cloneEdgeAgent() {
-    execSync("git clone https://github.com/amagyar-iohk/edge-agent.git")
+export async function cloneEdgeAgent(edgeAgentReleaseVersion: string | undefined = "main") {
+    console.log(`git clone --depth 1 --branch ${edgeAgentReleaseVersion} https://github.com/amagyar-iohk/edge-agent.git`)
+    execSync(`git clone --depth 1 --branch ${edgeAgentReleaseVersion} https://github.com/amagyar-iohk/edge-agent.git`)
+
+}
+
+export function fetchEdgeAgentReleaseTag(): string {
+    const lastRelease = execSync("npm view @amagyar-iohk/edge-agent version", { stdio: [] }).toString().trim()
+    return `v${lastRelease}`
 }
 
 export async function buildEdgeAgent() {

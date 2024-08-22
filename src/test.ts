@@ -1,4 +1,4 @@
-import { buildEdgeAgent, cloneEdgeAgent, testEdgeAgent, updateEdgeAgent } from "./edge-agent";
+import { buildEdgeAgent, cloneEdgeAgent, fetchEdgeAgentReleaseTag, testEdgeAgent, updateEdgeAgent } from "./edge-agent";
 import { Variables } from "./environment";
 
 /**
@@ -25,7 +25,8 @@ export async function test(variables: Variables): Promise< Map<string, Error>> {
     // if (other-sdk) { ... }
 
     // test service
-    await cloneEdgeAgent()
+    const edgeAgentReleaseVersion = fetchEdgeAgentReleaseTag()
+    await cloneEdgeAgent(edgeAgentReleaseVersion)
     await updateEdgeAgent()
     try {
         await testEdgeAgent(variables.urls)
