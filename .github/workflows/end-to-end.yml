@@ -19,7 +19,7 @@ jobs:
     env:
       COMPONENT: ${{ github.event.client_payload.component }}
       ENVIRONMENT: ${{ github.event.client_payload.env }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.PAT }}
 
     steps:
       - name: Checkout
@@ -45,11 +45,11 @@ jobs:
           git push
 
   update-site:
+    needs: integrate
     name: Update report website
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout
