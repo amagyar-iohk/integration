@@ -14,11 +14,12 @@ permissions:
 
 jobs:
   integrate:
-    name: "Source ${{ github.event.client_payload.component }} ${{ github.event.client_payload.env }}"
+    name: "Triggered from ${{ github.event.client_payload.component }} ${{ github.event.client_payload.env }}"
     runs-on: ubuntu-latest
     env:
       COMPONENT: ${{ github.event.client_payload.component }}
       ENVIRONMENT: ${{ github.event.client_payload.env }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout
