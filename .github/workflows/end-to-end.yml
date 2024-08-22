@@ -20,6 +20,7 @@ jobs:
       COMPONENT: ${{ github.event.client_payload.component }}
       ENVIRONMENT: ${{ github.event.client_payload.env }}
       GITHUB_TOKEN: ${{ secrets.PAT }}
+      GITHUB_ACTOR: ${{ github.actor }}
 
     steps:
       - name: Checkout
