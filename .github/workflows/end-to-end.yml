@@ -19,10 +19,10 @@ jobs:
     env:
       COMPONENT: ${{ github.event.client_payload.component }}
       ENVIRONMENT: ${{ github.event.client_payload.env }}
-      DEV_AGENT_URL: ${{ secrets.DEV_AGENT_URL }}
-      DEV_MEDIATOR_URL: ${{ secrets.DEV_MEDIATOR_URL }}
-      SIT_AGENT_URL: ${{ secrets.SIT_AGENT_URL }}
-      SIT_MEDIATOR_URL: ${{ secrets.SIT_MEDIATOR_URL }}
+      DEV_AGENT_URL: ${{ vars.DEV_AGENT_URL }}
+      DEV_MEDIATOR_URL: ${{ vars.DEV_MEDIATOR_URL }}
+      SIT_AGENT_URL: ${{ vars.SIT_AGENT_URL }}
+      SIT_MEDIATOR_URL: ${{ vars.SIT_MEDIATOR_URL }}
 
     steps:
       - name: Checkout
