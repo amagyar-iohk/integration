@@ -1,0 +1,44 @@
+name: End-to-end integration
+
+run-name: Testing '${{ github.event.client_payload.component }}' integration change
+
+on:
+  repository_dispatch:
+    types:
+      - 'cloud-agent'
+      - 'edge-agent'
+      - 'mediator'
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    name: "Source ${{ github.event.client_payload.component }} ${{ github.event.client_payload.env }}"
+    runs-on: ubuntu-latest
+    env:
+      COMPONENT: ${{ github.event.client_payload.component }}
+      ENVIRONMENT: ${{ github.event.client_payload.env }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run integration
+        id: integration
+        run: |
+          npm ci
+          npx run --component ${{ env.COMPONENT }} --env ${{ env.ENVIRONMENT }}
+
+      - name: Notify slack
+        if: failure()
+        env:
+          TEXT: "Resut of ${{ env.COMPONENT }} ${{ env.ENVIRONMENT}}: FAILED"
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        run: npm run slack
+
+      - name: Update reports
+        run: |
+          git add reports
+          git commit -m "update reports"
+          git push
