@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","4012","SDK should get messages from mediator","Edge-agent end-to-end","Thu Aug 22 04:07:34 UTC 2024","passed","Thu Aug 22 04:07:38 UTC 2024","","","",""
+"","25","Send message to issuer","Edge-agent end-to-end","Thu Aug 22 04:07:34 UTC 2024","passed","Thu Aug 22 04:07:34 UTC 2024","","","",""
+"","48","Setup mediator","Edge-agent end-to-end","Thu Aug 22 04:07:34 UTC 2024","passed","Thu Aug 22 04:07:34 UTC 2024","","","",""
+"","35","Connect to issuer","Edge-agent end-to-end","Thu Aug 22 04:07:34 UTC 2024","passed","Thu Aug 22 04:07:34 UTC 2024","","","",""
