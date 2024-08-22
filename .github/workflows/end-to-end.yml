@@ -21,6 +21,9 @@ jobs:
       ENVIRONMENT: ${{ github.event.client_payload.env }}
 
     steps:
+      - name: Set username
+        run: git config user.name ${{ github.actor }}
+        
       - name: Checkout
         uses: actions/checkout@v4
         with:
