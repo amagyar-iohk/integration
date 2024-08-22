@@ -49,11 +49,10 @@ jobs:
           git commit -m "update reports for ${{ github.event.client_payload.component }}"
           git push
 
-      - name: Upload Artifact
-        if: github.ref == 'refs/heads/main'
-        uses: actions/upload-pages-artifact@v1
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: "./reports"
+          path: './reports'
 
   update-site:
     needs: integrate
