@@ -1,1 +1,1 @@
-{"reportName":"edge-agent","testRuns":[],"statistic":{"failed":0,"broken":0,"skipped":0,"passed":6,"unknown":0,"total":6},"time":{"start":1724943125655,"stop":1724943129816,"duration":4161,"minDuration":1,"maxDuration":4004,"sumDuration":4158}}
+{"reportName":"edge-agent","testRuns":[],"statistic":{"failed":0,"broken":0,"skipped":0,"passed":7,"unknown":0,"total":7},"time":{"start":1724944101071,"stop":1724944105234,"duration":4163,"minDuration":2,"maxDuration":4005,"sumDuration":4161}}
